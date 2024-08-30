@@ -19,12 +19,12 @@ const addNewGoal = () => {
     
     const goalListItems = goalList.querySelectorAll('li');    
     
-    goalListItems.forEach(goalList => {
-        if (goalList.textContent === goalInput) {
-            alert('Goal already exists');
-            return;
-        }
-    });
+    for (let goal of goalListItems) {
+        if (goal.textContent === goalInput) {
+        alert('Goal already exists');
+        return;
+        };
+    };
 
     const newGoal = document.createElement('li');
     newGoal.textContent = goalInput;
