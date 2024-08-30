@@ -17,7 +17,9 @@ const addNewGoal = () => {
     const goalInput = document.querySelector('#goalInput').value;
     const goalList = document.querySelector('#goalList');
     
-    const goalListItems = goalList.querySelectorAll('li');
+    const goalListItems = document.querySelectorAll('#goalList');
+    console.log(goalListItems)
+    
     
     const newGoal = document.createElement('li');
     newGoal.textContent = goalInput;
