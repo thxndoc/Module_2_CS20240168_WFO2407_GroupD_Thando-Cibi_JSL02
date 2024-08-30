@@ -17,10 +17,15 @@ const addNewGoal = () => {
     const goalInput = document.querySelector('#goalInput').value;
     const goalList = document.querySelector('#goalList');
     
-    const goalListItems = goalList.querySelectorAll('li');
-    console.log(goalListItems)
+    const goalListItems = goalList.querySelectorAll('li');    
     
-    
+    goalListItems.forEach(goalList => {
+        if (goalList.textContent === goalInput) {
+            alert('Goal already exists');
+            return;
+        }
+    });
+
     const newGoal = document.createElement('li');
     newGoal.textContent = goalInput;
     goalList.appendChild(newGoal);
